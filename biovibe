@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Blog BioVibe - Saúde e Bem-Estar">
+    <meta name="keywords" content="saúde, bem-estar, fitness, nutrição">
+    <title>BioVibe - Saúde e Bem-Estar</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>BioVibe</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Início</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section id="home">
+        <h2>Bem-vindo ao BioVibe</h2>
+        <p>O melhor conteúdo sobre saúde e bem-estar.</p>
+    </section>
+    
+    <section id="blog">
+        <h2>Últimos Artigos</h2>
+        <div id="posts">
+            <p>Carregando artigos...</p>
+        </div>
+    </section>
+    
+    <section id="contato">
+        <h2>Entre em Contato</h2>
+        <form action="https://formspree.io/f/sua-chave" method="POST">
+            <label>Nome:<input type="text" name="name" required></label>
+            <label>Email:<input type="email" name="email" required></label>
+            <label>Mensagem:<textarea name="message" required></textarea></label>
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+    
+    <footer>
+        <p>&copy; 2025 BioVibe - Todos os direitos reservados.</p>
+        <p><a href="https://github.com/seuusuario">GitHub</a> | <a href="#">Instagram</a></p>
+    </footer>
+    
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch("posts.json")
+                .then(response => response.json())
+                .then(data => {
+                    const postsContainer = document.getElementById("posts");
+                    postsContainer.innerHTML = "";
+                    data.forEach(post => {
+                        const article = document.createElement("article");
+                        article.innerHTML = <h3>${post.title}</h3><p>${post.content}</p>;
+                        postsContainer.appendChild(article);
+                    });
+                })
+                .catch(error => console.error("Erro ao carregar artigos:", error));
+        });
+    </script>
+</body>
+</html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Blog BioVibe - Saúde e Bem-Estar">
+    <meta name="keywords" content="saúde, bem-estar, fitness, nutrição">
+    <title>BioVibe - Saúde e Bem-Estar</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>BioVibe</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Início</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section id="home">
+        <h2>Bem-vindo ao BioVibe</h2>
+        <p>O melhor conteúdo sobre saúde e bem-estar.</p>
+    </section>
+    
+    <section id="blog">
+        <h2>Últimos Artigos</h2>
+        <div id="posts">
+            <p>Carregando artigos...</p>
+        </div>
+    </section>
+    
+    <section id="contato">
+        <h2>Entre em Contato</h2>
+        <form action="https://formspree.io/f/sua-chave" method="POST">
+            <label>Nome:<input type="text" name="name" required></label>
+            <label>Email:<input type="email" name="email" required></label>
+            <label>Mensagem:<textarea name="message" required></textarea></label>
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+    
+    <footer>
+        <p>&copy; 2025 BioVibe - Todos os direitos reservados.</p>
+        <p><a href="https://github.com/seuusuario">GitHub</a> | <a href="#">Instagram</a></p>
+    </footer>
+    
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch("posts.json")
+                .then(response => response.json())
+                .then(data => {
+                    const postsContainer = document.getElementById("posts");
+                    postsContainer.innerHTML = "";
+                    data.forEach(post => {
+                        const article = document.createElement("article");
+                        article.innerHTML = <h3>${post.title}</h3><p>${post.content}</p>;
+                        postsContainer.appendChild(article);
+                    });
+                })
+                .catch(error => console.error("Erro ao carregar artigos:", error));
+        });
+    </script>
+</body>
+</html>
+[
+    {
+        "title": "10 Dicas para uma Vida Saudável",
+        "content": "Descubra como pequenos hábitos podem transformar sua saúde e bem-estar."
+    },
+    {
+        "title": "Alimentação Balanceada: O Guia Completo",
+        "content": "Saiba como montar um prato saudável e equilibrado para o dia a dia."
+    },
+    {
+        "title": "Exercícios Físicos para Iniciantes",
+        "content": "Dicas essenciais para começar a se exercitar de forma segura e eficiente."
+    }
+]
